@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #475569 !important;
+  opacity: 1 !important;
+}
