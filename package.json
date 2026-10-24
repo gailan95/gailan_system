@@ -9,8 +9,8 @@
     "lint": "tsc --noEmit",
     "preview": "vite preview --port 3000"
   }
-  "dependencies": {"react-is:"18.2.0",
-    "@types/qrcode": "^1.5.6",
+  "dependencies": {
+    "react-is": "^18.2.0",
     "browser-image-compression": "^2.0.2",
     "firebase": "^13.0.0",
     "html2canvas": "^1.4.1",
