@@ -22,7 +22,7 @@ import { db } from '../lib/firebase';
 import { isFirestoreQuotaBlocked, handleFirestoreError } from '../utils/firestoreQuota';
 import { isSameCustomerOrDebtor, parseNumericDebt } from '../utils/textNormalization';
 // @ts-ignore
-import defaultDatabaseData from '../../data/database.json';
+import defaultDatabaseData from '../data/database.json';
 
 // Global helper to persistently sync an entity document to Firestore Cloud
 export async function syncDocToFirestore(collectionName: string, docId: string, data: any): Promise<void> {
