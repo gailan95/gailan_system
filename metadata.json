@@ -1,0 +1,6 @@
+{
+  "name": "سیستەمی کۆگا، فرۆشتن، قەرز و خێر و خەسار",
+  "description": "سیستەمی تەواوی بەڕێوەبردنی کۆگا، فرۆشتن و پسوولە، قەرزداری و حیساباتی خێر و خەسار",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

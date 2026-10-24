@@ -1,0 +1,144 @@
+{
+  "entities": {
+    "OrderAndDebt": {
+      "title": "Order and Debt Transaction",
+      "description": "Unified record containing receipt, debt, and product information",
+      "type": "object",
+      "properties": {
+        "receipt": {
+          "type": "object",
+          "description": "Receipt details including ID, total amount, and date"
+        },
+        "debt": {
+          "type": "object",
+          "description": "Debt information including customer name, debt amount, and payment status"
+        },
+        "product": {
+          "type": "object",
+          "description": "Product details including name, quantity, and price"
+        },
+        "items": {
+          "type": "array",
+          "description": "Optional list of items in the transaction"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of creation"
+        }
+      },
+      "required": ["receipt", "debt", "product"]
+    },
+    "SystemStats": {
+      "title": "System Storage Stats",
+      "description": "Metadata for storage files and byte metrics",
+      "type": "object",
+      "properties": {
+        "totalBytes": { "type": "number" },
+        "totalFiles": { "type": "number" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "Sale": {
+      "title": "Sale Invoice",
+      "description": "Detailed sales invoices",
+      "type": "object",
+      "properties": {
+        "invoiceNumber": { "type": "string" },
+        "customerName": { "type": "string" },
+        "total": { "type": "number" },
+        "date": { "type": "string" }
+      }
+    },
+    "Customer": {
+      "title": "Customer / Debtor",
+      "description": "Customer profile with total debt",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "totalDebt": { "type": "number" }
+      }
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Inventory product item",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "barcode": { "type": "string" },
+        "sellingPrice": { "type": "number" },
+        "stock": { "type": "number" },
+        "shareholderName": { "type": "string" },
+        "shareholderPercentage": { "type": "number" },
+        "shareFinalized": { "type": "boolean" }
+      }
+    }
+  },
+  "firestore": {
+    "/orders_and_debts/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "Unified collection storing complete receipts, debts, and products transactions"
+    },
+    "/system_stats/{docId}": {
+      "schema": "SystemStats",
+      "description": "Real-time storage metadata"
+    },
+    "/sales/{docId}": {
+      "schema": "Sale",
+      "description": "Sales collection"
+    },
+    "/customers/{docId}": {
+      "schema": "Customer",
+      "description": "Customers and debtors"
+    },
+    "/products/{docId}": {
+      "schema": "Product",
+      "description": "Inventory items"
+    },
+    "/debtTransactions/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "Debt transactions history"
+    },
+    "/expenses/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "Expenses logs"
+    },
+    "/employees/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "Employee entries"
+    },
+    "/userAccounts/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "User accounts"
+    },
+    "/settings/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "Global settings document"
+    },
+    "/productMovements/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "Movements history"
+    },
+    "/closedProductArchives/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "Archived products"
+    },
+    "/shareholderTransactions/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "Shareholder ledger transactions"
+    },
+    "/debts/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "Debts records and payment statuses"
+    },
+    "/commissionAccounts/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "Commission customer accounts and transactions"
+    },
+    "/app_data/{docId}": {
+      "schema": "OrderAndDebt",
+      "description": "Master persistent database snapshots"
+    }
+  }
+}
